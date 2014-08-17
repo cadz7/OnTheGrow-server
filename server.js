@@ -25,7 +25,8 @@ var listingSchema = new mongoose.Schema({
   quantity: Number,
   price: Number,
   description: String,
-  date: Date
+  date: Date,
+  uploadedImages: [String]
 });
 
 var userSchema = new mongoose.Schema({
@@ -165,7 +166,8 @@ app.post('/api/lists', function(req, res) {
     quantity: req.body.quantity,
     price: req.body.price,
     date: req.body.date,
-    description: req.body.description
+    description: req.body.description,
+    uploadedImages: req.body.uploadedImages
   })
   listing.save(function(err) {
     if (err) return next(err);
