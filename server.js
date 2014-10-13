@@ -83,7 +83,7 @@ passport.use(new LocalStrategy({usernameField: 'email' },
   });
 }));
 
-mongoose.connect('mongodb://admin:password@ds061189.mongolab.com:61189/onthegrow');
+mongoose.connect(process.env.DB_URL);
 
 /*Express Middleware*/
 
